@@ -1,1 +1,37 @@
 <!DOCTYPE html>
+<html lang="ko-KR">
+  <!-- 한국어-한국 -->
+<head>
+  <meta charset="UTF-8">
+  <title>웹카페 - 고정형 레이아웃</title>
+  <!-- 다른 것들도 많음. meta 등. 공부 -->
+  <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+  <div class="skip-nav"><a href="#">본문 바로가기</a></div>
+  <!-- 네비를 지나쳐서 바로 본문으로 갈 수 있는 링크. 웹접근성 입장에서 본문 맨 앞에 필요하다. -->
+
+  <!-- 3단으로 실습할 거야(visual, slogan 넣으니까 5단됨?) -->
+  <header class="header">
+    header
+  </header>
+  
+  <div class="visual">visual</div>
+  <!-- 시멘틱과 관계없는 구조니까 div -->
+  
+  <main class="main">
+    <div class="group group1">group1</div>
+    <!-- nth-child를 쓸 수도 있는데 성능 문제가 있을 수 있음. 구조적으로 선택할 때 필요. -->
+
+    <div class="group group2">group2</div>
+
+    <div class="group group3">group3</div>
+  </main>
+
+  <div class="slogan">slogan</div>
+  
+  <footer class="footer">
+    <div class="footer-wrapper">footer</div>
+  </footer>
+</body>
+</html>
