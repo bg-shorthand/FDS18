@@ -1,0 +1,13 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+@import url(./fontello.css);
+
+body {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+  /* 맨 뒤에 'Sans-serif'는 글꼴 계열. 필수. serif는 삐침(궁서) sans-serif는 고딕 */
+  } 
+
+/* 스킵 내비게이션 */
+.skip-nav {
+  display: none;
+}
