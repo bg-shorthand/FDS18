@@ -2,31 +2,35 @@
 @import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
 @import url(./fontello.css);
 
+/* 숨김 제목 및 숨김 콘텐츠 */
+.a11y-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: 0;
+  clip-path:polygon(0 0, 0 0, 0 0)
+}
+
 body *,
 body *::before,
 body *::after {
   box-sizing: border-box;
-  /* border,padding,margin 넣어도 크기가 안 변하게.
-  비포 에프터를 넣은 건 모든 브라우저를 커버하기 위해서.
-  성능 관점에서 부모 선택자로 body.*/
 }
 
-/* float 이나 flex 로 배치 학습할 것 */
 html {
   font-size: 10px;
 }
 
 body {
   font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
-  /* 맨 뒤에 'Sans-serif'는 글꼴 계열. 필수. serif는 삐침(궁서) sans-serif는 고딕 */
   font-size: 1.5rem;
   color: #181818;
-  background: #fff;
+  background: #ccc;
 }
 /* 링크 스타일 */
 a{
   color: inherit;
-  /* a가 속해 있는 곳과 색을 맞추어 유지보수가 쉽게 상속 시킴 */
   text-decoration: none;
 }
 
@@ -36,7 +40,6 @@ a{
 }
 
 /* 레이아웃*/
-
 .header,
 .visual,
 .main,
@@ -47,25 +50,17 @@ a{
 
 /* 헤더 */
 header {
-  background: yellow;
+  background: white;
   position: relative;
   border-radius: 0 0 15px 15px;
-  /* 사분할면 만들고 1분할면부터 시계방향 
-  x1 x2 x3 x4 / y1 y2 y3 y4*/
   padding: 0 30px;
 }
-/* 로고 */
+  /* 로고 */
   .logo{
-    background: blue;
     margin: 0;
     position: absolute;
-    /* absolute 도 화면에서 띄우는 거. 영역 차지 안함.
-    띄우려면 상자 사이즈를 알아야 하고 그러면 BFC
-    absolute는 상위 요소 중에서 포지션이 스태틱이 아닌 게 기준
-    relative를 많이 쓰는 건 전체 구조를 망치지 않으니까.
-    모듈화된 사이트를 만들다보면 ab>ab도 쓸 수 있음. */
-    top: 50px;
     left: 65px;
+    top: 55px;
   }
   /* 안내 링크 목록 */
   .member{
@@ -73,7 +68,6 @@ header {
     padding-left: 0;
     list-style: none;
     text-align: right;
-    /* 블럭 요소 안의 인라인 요소를 정렬 */
   }
   .member li{
     display: inline-block;
@@ -82,11 +76,111 @@ header {
   .member li a{
     display: inline-block;
     padding: 6px 0;
-    /* 부모요소에 여백을 줄 수도 있지만 클릭 영역을 넓히기 위해 a에 줬음. */
-    background: pink;
+  }
+  /* 네비게이션 */
+  .navigation{
+    padding-bottom: 36px;
+  }
+  .menu{
+    background: linear-gradient(to bottom, #ef992f 1%,#ed7e2f 22%,#ef792f 76%,#ef992f 100%);
+    margin: 10 0 0 0;
+    padding-left: 225px;
+    list-style: none;
+    border-top: 2px solid currentColor;
+    height: 47px;
+    border-radius: 0 0 5px 5px;
+  }
+  .menu-item{
+    position: relative;
+    float: left;
+  }
+  .menu-button{
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 700;
+    background: transparent;
+    padding: 0;
+    line-height: 46px;
+    padding: 0 19px;
+    margin: 0;
+    border: none;
+    border-left: 2px solid rgba(255,255,255,.5);
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  }
+  .menu-act .menu-button{
+    /* color: #ff0; */
+  }
+.menu-act .menu-button::after{
+  content: "";
+  display: block;
+  border-top: 2px solid #000;
+}
+  .sub-menu{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: none;
+    position: absolute;
+    /* 위치를 조정하는데, 원래 자리를 차지 하지 않는 걸 사용
+    위에 버튼에 얘네가 들어가서 float이 망가짐 
+    앱솔루트는 부모의 범위만 씀, 인라인 블록 썼을 때 줄바꿈*/
+    white-space: nowrap;
+    /* 이렇게 해서 한 줄로 바꿈 */
+    /* background: pink; */
+    top: 47px;
+    /* 구분선이 보일만큼의 갭 */
+  }
+  .sub-menu li{
+    display: inline-block;
+  }
+  .sub-menu li,
+  .sub-menu a{
+    display: inline-block;
+    padding: 8px 0;
+    margin-right: 10px;
+  }
+  .sub-menu a::before{
+    content: "\f192";
+    font-family: "fontello";
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: 2px;
+  }
+  .sub-menu a:hover::before,
+  .sub-menu a:focus::before {
+    content: "\e800";
+  }
+  .menu-act .sub-menu{
+    /* display: block; */
+  }
+  .sub-menu1, .sub-menu2, .sub-menu3{
+    left: 0;
+  }
+  .sub-menu4, .sub-menu5, .sub-menu6{
+    right: 0;
+  }
+  .sub-menu1{
+    display: none;
+  }
+  .sub-menu2{
+    display: none;
+  }
+  .sub-menu3{
+    display: none;
+  }
+  .sub-menu4{
+    display: block;
+  }
+  .sub-menu5{
+    display: none;
+  }
+  .sub-menu6{
+    display: none;
   }
 
-
+/* 비주얼 */
 .visual {
   background: lime;
   height: 120px;
@@ -94,28 +188,9 @@ header {
 
 .main {
   background: skyblue;
-  /* height: 400px; */
-  /* float 부모 요소에 높이를 줘서 아래를 포함할 수 있지만, 보수유지 어쩔 거. */
-  padding: 30px 15px;
   overflow: hidden;
-  /* BFC? */
   min-height: 450px;
-  /* 높이 값은 고정하지 않는 게 좋다. 고정할 영역은 고정. */
 }
-
-  /* .clearfix {
-    clear: both;
-  } */
-  /* float 아래 보이지 않는 자식 요소를 만들어 클리어 */
-
-  /* .clearfix::after{
-    content: "";
-    display: block;
-    clear: both;
-  } */
-  /* 부모요소의 뒤에 가상요소를 만들어서 클리어. 
-  부모요소에 clearfix 클래스 이름 줘서 넣음.*/
-
   .group {
     margin: 0 15px;
     float: left;
