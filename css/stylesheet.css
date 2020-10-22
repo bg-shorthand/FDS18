@@ -3,12 +3,15 @@
 @import url(./fontello.css);
 
 /* 숨김 제목 및 숨김 콘텐츠 */
-.a11y-hidden{
+.a11y-hidden, .legend{
+  position: absolute;
   width: 1px;
   height: 1px;
   overflow: hidden;
   margin: 0;
   clip-path: polygon(0 0, 0 0, 0 0);
+  clip: rect(0 0 0 0);
+  clip: rect(0,0,0,0);
 }
 
 body *,
@@ -228,6 +231,7 @@ header {
   background: skyblue;
   overflow: hidden;
   min-height: 450px;
+  padding: 30px 15px;
 }
   .group {
     margin: 0 15px;
@@ -237,6 +241,29 @@ header {
     background: blueviolet;
     width: 250px;
   }
+  .login {
+    background: linear-gradient(to bottom, #eaa056 0%,#ef792f 88%,#ef792f 100%,#ed8e2f 100%);
+    border-radius: 10px;
+    box-shadow: 1px 1px;
+    padding: 10px;
+  }
+  .login-heading {
+    font-size: inherit;
+    color: #ff0;
+    margin: 0 10px;
+    margin-bottom: 10px;
+  }
+  .login-form {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  fieldset {
+    border: none;
+  }
+  .user-emil, .user-pw {
+    white-space: nowrap;
+  }
+
   .group2 {
     background: lightgreen;
     width: 380px;
