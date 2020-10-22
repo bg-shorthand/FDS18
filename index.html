@@ -40,14 +40,11 @@
     <!-- 네비 -->
     <nav class="navigation">
       <h2 class="a11y-hidden">메인 메뉴</h2>
-        <!-- .ally-hidden 보이지 않더라도 제목 지정 css로 숨김 -->
         <ul class="menu">
           <li class="menu-item menu-act">
             <button type="button" class="menu-button">
               html에 대해서
             </button>
-            <!-- li에 그냥 넣으면 아래 li에도 css 상속되므로 button을 또 넣음.
-            div/span을 그냥 쓰는 게 아니라 button -->
             <ul class="sub-menu sub-menu1">
               <li>
                 <a href="#">HTML5 소개</a>
@@ -60,7 +57,6 @@
               </li>
             </ul>
           </li>
-        <!-- 여러 개 같은 걸 만들 때, 일단 더미 데이터를 잘 만들자 -->
           <li class="menu-item">
             <button type="button" class="menu-button">
               css에 대해서
@@ -152,10 +148,17 @@
           </li>
         </ul>
     </nav>
-  
   </header>
 
-  <div class="visual">visual</div>
+  <div class="visual">
+    <!-- 텍스트는 마크업 / 나머지 이미지는 배경으로 연습.
+    꽃이 두 개 씩 둘. 배경이 둘 필요해. 태그를 또 만들면 이미지 쓰는 거랑 같으니까, 가상요소 비포/에프터 를 쓴다.visual영역은 의미는 없으니까 제목은 안 넣는다.-->
+    <div class="visual">
+      <p class="visual-text">
+        Web Standards &amp; Accessibility
+      </p>
+    </div>
+  </div>
 
   <main class="main clearfix">
     <div class="group group1">group1</div>
