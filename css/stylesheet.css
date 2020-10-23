@@ -303,9 +303,9 @@ header {
     border-radius: 3px;
     background: #ed702d;
     color: #fff;
-    display: absolute;
+    position: absolute;
     top: 0;
-    left: 100px;
+    right: 0;
   }
   
   .login-member {
@@ -333,10 +333,50 @@ header {
     align-items: center;
   }
 
-.slogan {
-  background: orange;
-  height: 250px;
-}
+  /* 유효성 검사 배너 */
+  .slogan {
+    background: orange;
+    height: 250px;
+  }
+
+  .validation-list {
+    list-style: none;
+    margin: 25px 0 0 0;
+    list-style: none;
+    padding-left: 0;
+  }
+  .validation-list a {
+    border-radius: 20px;
+    border: 1px solid #aaa;
+    background: url(./images/validation_icon.png) no-repeat 25px 50% / 20px 20px, linear-gradient(to bottom, #eee, #ccc);
+    padding: 8px 8px 10px 55px;
+    margin-top: 10px;
+    display: block;
+  }
+  .validation-list a:hover, .validation-list a:focus {
+    color: red;
+  }
+  /* .validation-list a { */
+    /* display: block;
+    margin: 10px 0;
+    padding-left: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    display: flex;
+    align-items: center; 
+    ->내가 했던 거*/
+
+  .validation-list a::before {
+    background: linear-gradient(to bottom, #a0abdb 0%,#2989d8 7%,#207cca 53%,#7d97e8 100%);
+  }
+  .validation-list a::after {
+    content: "";
+    background-image: url(../css/images/validation_icon.png);
+    background-repeat: no-repeat;
+    background-position: 10px 5px;
+  }
+
 
 .footer {
   background: pink;

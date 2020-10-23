@@ -151,8 +151,6 @@
   </header>
 
   <div class="visual">
-    <!-- 텍스트는 마크업 / 나머지 이미지는 배경으로 연습.
-    꽃이 두 개 씩 둘. 배경이 둘 필요해. 태그를 또 만들면 의미 없는 태그를 또 만들어야 하니까(이미지 쓰는 거랑 같으니까), 가상요소 비포/에프터 를 쓴다.visual영역은 의미는 없으니까 제목은 안 넣는다.-->
     <div class="visual">
       <p class="visual-text">
         Web Standards &amp; Accessibility
@@ -162,24 +160,25 @@
 
   <main class="main clearfix">
     <div class="group group1">
+      
       <section class="login">
         <h2 class="login-heading">로그인</h2>
         <form class="login-form" method="POST" action="https://formspree.io/seulbinim@gmail.com">
           <fieldset>
             <legend>회원 로그인 폼</legend>
             <!-- form은 fieldset과 legend가 짝꿍 -->
-              <div class="user-email">
-                <label for="userEmail">아이디</label>
-                <input type="email" id="userEmail" placeholder="이메일주소" name="userEmail" required>
-              </div>
-              <div class="user-pw">
-                <label for="userPw">비밀번호</label>
-                <input type="password" id="userPw" name="userPw" required placeholder="8자리 이상" minlength="8">
-              </div>
-              <!-- <label>아이디<input type="email"" name="id" placeholder="이메일 주소"></label>
-              <label>비밀번호<input type="password" name="pwd" placeholder="8자리 이상" minlength="8"></label> 
-              ->이건 내가 미리 했던 거. -->
-              <button class="btn-login" type="submit">로그인</button> 
+            <div class="user-email">
+              <label for="userEmail">아이디</label>
+              <input type="email" id="userEmail" placeholder="이메일주소" name="userEmail" required>
+            </div>
+            <div class="user-pw">
+              <label for="userPw">비밀번호</label>
+              <input type="password" id="userPw" name="userPw" required placeholder="8자리 이상" minlength="8">
+            </div>
+            <!-- <label>아이디<input type="email"" name="id" placeholder="이메일 주소"></label>
+            <label>비밀번호<input type="password" name="pwd" placeholder="8자리 이상" minlength="8"></label> 
+            ->이건 내가 미리 했던 거. -->
+            <button class="btn-login" type="submit">로그인</button> 
           </fieldset>
         </form>
         <ul class="login-member">
@@ -195,6 +194,14 @@
         <!-- <a href="#">회원가입</a>
         <a href="#">아이디/비밀번호 찾기</a> 
         -> 내가 미리 했던 거-->
+      </section>
+      
+      <section class="validation">
+        <h2 class="a11y-hidden">유효성 검사 배너</h2>
+        <ul class="validation-list">
+          <li><a href="https://validator.w3.org/" target="_blank" title="마크업 유효성 검사 사이트로 이동">W3C Markup Validation</a></li>
+          <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank" title="CSS 유효성 검사 사이트로 이동">CSS Validation Service</a></li>
+        </ul>
       </section>
     </div>
     <div class="group group2">group2</div>
