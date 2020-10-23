@@ -3,7 +3,7 @@
 @import url(./fontello.css);
 
 /* 숨김 제목 및 숨김 콘텐츠 */
-.a11y-hidden, .legend{
+.a11y-hidden, legend{
   position: absolute;
   width: 1px;
   height: 1px;
@@ -101,12 +101,12 @@ header {
     font-size: 1.6rem;
     color: #fff;
     font-weight: 700;
+    border: none;
     background: transparent;
     padding: 0;
     line-height: 46px;
     padding: 0 19px;
     margin: 0;
-    border: none;
     border-left: 2px solid rgba(255,255,255,.5);
     text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
   }
@@ -186,6 +186,7 @@ header {
   }
 }
 
+/* 비주얼 영역 */
 .visual {
   height: 120px;
   position: relative;
@@ -228,7 +229,7 @@ header {
 }
 
 .main {
-  background: skyblue;
+  background: #fff;
   overflow: hidden;
   min-height: 450px;
   padding: 30px 15px;
@@ -238,39 +239,98 @@ header {
     float: left;
   }
   .group1 {
-    background: blueviolet;
     width: 250px;
   }
-  .login {
-    background: linear-gradient(to bottom, #eaa056 0%,#ef792f 88%,#ef792f 100%,#ed8e2f 100%);
-    border-radius: 10px;
-    box-shadow: 1px 1px;
-    padding: 10px;
-  }
-  .login-heading {
-    font-size: inherit;
-    color: #ff0;
-    margin: 0 10px;
-    margin-bottom: 10px;
-  }
-  .login-form {
-    background-color: #fff;
-    border-radius: 10px;
-  }
-  fieldset {
-    border: none;
-  }
-  .user-emil, .user-pw {
-    white-space: nowrap;
-  }
-
   .group2 {
-    background: lightgreen;
     width: 380px;
   }
   .group3 {
-    background: tomato;
     width: 190px;
+  }
+
+  /* 로그인 */
+  .login {
+    background: radial-gradient(circle at right top, #ef992f 1%, #ed7e2f 22%);
+    /* radial-gradient */
+    border-radius: 5px;
+    box-shadow: 5px 5px 0 0 #ccc;
+    padding: 15px 10px;
+  }
+  .login-heading {
+    margin: 0 10px;
+    color: #ff0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    /* 헤딩 태그라 굵기가 있지만, 나중에 누가 바꾸더라도 유지할 수 있게. */
+    text-indent: 10px;
+  }
+  .login-form {
+    margin-top: 10px;
+    padding: 10px 10px 0 10px;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+  }
+  .login-form fieldset {
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 0;
+    padding-bottom: 10px;
+    margin: 0;
+    /* form과 fieldset을 다르게 두고 쓸 수도 있다. id, for */
+    position: relative;
+  }
+  .user-email, .user-pw {
+    margin-bottom: 5px;
+  }
+  .user-email *, .user-pw *{
+    vertical-align: middle;
+  }
+  .login-form label {
+    width: 4em;
+    display: inline-block;
+  }
+  .login-form input {
+    width: 90px;
+    height: 22px;
+    border: 1px solid #ccc;
+    padding: 1px 1px 1px .5em;
+  }
+  .btn-login {
+    width: 50px;
+    height: 50px;
+    padding: 0 5px;
+    border: 0;
+    border-radius: 3px;
+    background: #ed702d;
+    color: #fff;
+    display: absolute;
+    top: 0;
+    left: 100px;
+  }
+  
+  .login-member {
+    background-color: #fff;
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    letter-spacing: -1.5px;
+  }
+  .login-member a {
+    display: block;
+    padding: 0;
+  }
+  .login-member .icon-right-open {
+    color: #ed702d;
+  }
+  .login-member li {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
 .slogan {
