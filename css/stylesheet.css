@@ -334,11 +334,6 @@ header {
   }
 
   /* 유효성 검사 배너 */
-  .slogan {
-    background: orange;
-    height: 250px;
-  }
-
   .validation-list {
     list-style: none;
     margin: 25px 0 0 0;
@@ -367,7 +362,7 @@ header {
     align-items: center; 
     ->내가 했던 거*/
 
-  .validation-list a::before {
+  /* .validation-list a::before {
     background: linear-gradient(to bottom, #a0abdb 0%,#2989d8 7%,#207cca 53%,#7d97e8 100%);
   }
   .validation-list a::after {
@@ -375,8 +370,58 @@ header {
     background-image: url(../css/images/validation_icon.png);
     background-repeat: no-repeat;
     background-position: 10px 5px;
-  }
+  } */
 
+  /* 웹 관련 용어 */
+  .term {
+    border: 1px solid #aaa;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  .term-heading {
+    margin-top: 0;
+    margin-bottom: 0;
+    /* margin: 0;
+    필요한 부분만 0을 주는 게 성능이 좋을 수 있다. 갑론을박 있음. */
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .term-list {
+    margin: 15px 0 0 0;
+  }
+  .term-list-subject {
+    display: inline-block;
+    color: #296897;
+  }
+  .term-list-thumnail {
+    float: left;
+    margin: 0 10px;
+  }
+  .term-list-brief {
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+  .term-list p {
+    margin: 0;
+  }
+  .term-list dd {
+    margin: 0;
+  }
+  .term-list div:nth-child(even) {
+    margin-top: 50px;
+  }
+  .term-list div:nth-child(even) .term-list-thumnail {
+    float: right;
+  }
+  
+
+
+.slogan {
+  background: orange;
+  height: 250px;
+}
 
 .footer {
   background: pink;
