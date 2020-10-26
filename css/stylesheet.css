@@ -416,6 +416,64 @@ header {
     float: right;
   }
   
+  /* 검색폼 */
+  .search-form {
+    background: #ccc linear-gradient(#ccc, #eee);
+    /* 앞에 ccc는 콜백. 리니어 그라디언트가 안 되는 브라우저면 단색으로라도 나오라고. */
+    border: 1px solid #aaa;
+    border-bottom-color: #fff;
+    /* 굵기를 없애는 게 아니라 색을 투명하게. */
+    border-radius: 15px 15px 0 0;
+    padding: 15px 25px 10px;
+  }
+  .search-form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  .search-form-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-form [name="search"] {
+    /* 유니크한 이름으로 name 속성을 많이 쓴다. */
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 1px 1px 1px .5em;
+    height: 22px;
+    /* flex-grow: 1; */
+    width: 190px;
+    /* margin: 0 5px; */
+  }
+  .btn-search {
+    background-color: #333;
+    border: 1px solid #aaa;
+    color: #fff;
+    border-radius: 3px;
+    height: 22px;
+    padding: 0 10px;
+  }
+
+  /* .search-form {
+    border: 1px solid #aaa;
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+    background: linear-gradient(to bottom, #ccc, #eee);
+    padding: 15px 15px 5px 15px;
+  }
+  .search-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .search-form fieldset input {
+    width: 180px;
+  }
+  ->내가 한 거 */
 
 
 .slogan {
