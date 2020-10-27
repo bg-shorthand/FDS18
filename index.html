@@ -166,7 +166,6 @@
         <form class="login-form" method="POST" action="https://formspree.io/seulbinim@gmail.com">
           <fieldset>
             <legend>회원 로그인 폼</legend>
-            <!-- form은 fieldset과 legend가 짝꿍 -->
             <div class="user-email">
               <label for="userEmail">아이디</label>
               <input type="email" id="userEmail" placeholder="이메일주소" name="userEmail" required>
@@ -175,9 +174,6 @@
               <label for="userPw">비밀번호</label>
               <input type="password" id="userPw" name="userPw" required placeholder="8자리 이상" minlength="8">
             </div>
-            <!-- <label>아이디<input type="email"" name="id" placeholder="이메일 주소"></label>
-            <label>비밀번호<input type="password" name="pwd" placeholder="8자리 이상" minlength="8"></label> 
-            ->이건 내가 미리 했던 거. -->
             <button class="btn-login" type="submit">로그인</button> 
           </fieldset>
         </form>
@@ -191,9 +187,6 @@
             <a href="#">아이디/비밀번호 찾기</a>
           </li>
         </ul>
-        <!-- <a href="#">회원가입</a>
-        <a href="#">아이디/비밀번호 찾기</a> 
-        -> 내가 미리 했던 거-->
       </section>
       
       <section class="validation">
@@ -235,6 +228,36 @@
           </div>
       </fieldset>
       </form>
+      <div class="board">
+        <section class="notice is-active">
+          <h2 class="notice-heading tab"><a href="#" role="button" id="noticeHeading">공지사항</a></h2>
+          <!-- heading 안에 button이 있는 것보다 a가 자연스럽다.
+          button에 role 주는 건 역할을 바꾸는 거라 지양.
+          a는 시맨틱 요소가 아니므로 role을 줘도 무방 -->
+          <ul class="notice-list">
+            <li><a href="#">HTML의 모든 것을 알려주마 샘플 활용법</a><time datetime="2020-10-27T14:38:56">2020.10.27</time></li>
+            <!-- 게시날짜, 조회수 등 모두 목록에 해당. li에 포함 -->
+            <li><a href="#">W3C 사이트 리뉴얼 및 공지사항</a><time datetime="2020-10-27T14:38:56">2020.10.27</time></li>
+            <li><a href="#">KWCAG 2.1 소식</a><time datetime="2020-10-27T14:38:56">2020.10.27</time></li>
+            <li><a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a><time datetime="2020-10-27T14:38:56">2020.10.27</time></li>
+            <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기...</a><time datetime="2020-10-27T14:38:56">2020.10.27</time></li>
+          </ul>
+          <a href="#" class="notice-more icon-plus" aria-labelledby="noticeHeading" title="공지사항">더보기</a>
+          <!-- 아래 더보기 a와 구별되지 않아. title, aira-label, aria-labelledby(id필요, 위 내용이 수정되면 여기도 수정)
+          ->아리아 레이블드는 툴팁이 안 떠서 타이틀도 씀 -->
+        </section>
+        <section class="pds">
+          <h2 class="pds-heading tab"><a href="#" role="button" id="pdsHeading">자료실</a></h2>
+          <ul class="pds-list">
+            <li><a href="#">디자인 사이트 링크 모음</a><time datetime="2020-10-28T14:38:56">2020.10.28</time></li>
+            <li><a href="#">웹 접근성 관련 자료 모음</a><time datetime="2020-10-28T14:38:56">2020.10.28</time></li>
+            <li><a href="#">예제 샘플 응용해보기</a><time datetime="2020-10-28T14:38:56">2020.10.28</time></li>
+            <li><a href="#">웹 접근성 향상을 위한 국가 표준 기술 가이드라인</a><time datetime="2020-10-28T14:38:56">2020.10.28</time></li>
+            <li><a href="#">로얄티 프리 이미지 자료</a><time datetime="2020-10-28T14:38:56">2020.10.28</time></li>
+          </ul>
+          <a href="#" class="pds-more icon-plus" aria-labelledby="pdsHeading" title="자료실">더보기</a>
+        </section>
+      </div>
     </div>
     <div class="group group3">group3</div>
   </main>
