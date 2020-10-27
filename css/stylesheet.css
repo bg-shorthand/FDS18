@@ -155,12 +155,10 @@ header {
     right: 0;
   }
 
-/* 텍스트 및 배경 애니메이션 - 비주얼 영역 */
 @keyframes textAni{
   0%{
     font-size: 12px;
     color: rgba(0,0,0,0);
-    /* 투명도는 opacity(상자 전체 흐림) / color(글자만 흐림)로 조절 가능. */
     transform: translate(0, 0);
   }
   100%{
@@ -168,14 +166,6 @@ header {
     color: rgba(0,0,0,1);
     transform: translate(400px, 75px);
   }
-  /* 애니메이션을 만들려면 시나리오부터 짠다.
-    0. a-name : textAni
-    1. 이동 ( 0,0 -> 400px, 750px)
-    2. 글자 크기 (12px ->24px)
-    3. 투명도 (0 -> 1) */
-    /* 이동으로 쓸 수 있는 것 translate(스크롤 생김 / 성능상 제일 좋음)/margin(마진겹침)/padding(배경이 안 보여도 되는 경우에만)/position(rel:전체 크기가 같이 움직여서 스크롤 생김 / absol)
-    -> reflow를 발생 시키는 속성들(margin/height 등)
-    -> gpu가속? */
 }
 @keyframes bgAni{
   0%{
@@ -192,7 +182,6 @@ header {
   position: relative;
 }
 .visual::before, .visual::after{
-  /* 적더라도 공통된 부분은 묶어서, 최적화를 고민하자 */
   content:"";
   position: absolute;
   top: 0;
@@ -200,11 +189,6 @@ header {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
-  /* animation-name: bgAni;
-  animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out; */
   animation: bgAni 2000ms infinite alternate ease-in-out;
 }
 .visual::before{
@@ -218,12 +202,9 @@ header {
 }
 .visual-text{
   width: 500px;
-  /* position: absolute; */
   margin: 0;
-  /* 마진 겹침 삭제 */
   animation-name: textAni;
   animation-duration: 3000ms;
-  /* 애니메이션 이름과 실행시간은 필수 (나머지 값은 mdn에 []로 써있을 것. */
   animation-fill-mode: forwards;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -251,7 +232,6 @@ header {
   /* 로그인 */
   .login {
     background: radial-gradient(circle at right top, #ef992f 1%, #ed7e2f 22%);
-    /* radial-gradient */
     border-radius: 5px;
     box-shadow: 5px 5px 0 0 #ccc;
     padding: 15px 10px;
@@ -261,7 +241,6 @@ header {
     color: #ff0;
     font-size: 1.6rem;
     font-weight: 700;
-    /* 헤딩 태그라 굵기가 있지만, 나중에 누가 바꾸더라도 유지할 수 있게. */
     text-indent: 10px;
   }
   .login-form {
@@ -276,7 +255,6 @@ header {
     padding: 0;
     padding-bottom: 10px;
     margin: 0;
-    /* form과 fieldset을 다르게 두고 쓸 수도 있다. id, for */
     position: relative;
   }
   .user-email, .user-pw {
@@ -337,7 +315,6 @@ header {
   .validation-list {
     list-style: none;
     margin: 25px 0 0 0;
-    list-style: none;
     padding-left: 0;
   }
   .validation-list a {
@@ -351,26 +328,6 @@ header {
   .validation-list a:hover, .validation-list a:focus {
     color: red;
   }
-  /* .validation-list a { */
-    /* display: block;
-    margin: 10px 0;
-    padding-left: 30px;
-    height: 30px;
-    border: 1px solid gray;
-    border-radius: 15px;
-    display: flex;
-    align-items: center; 
-    ->내가 했던 거*/
-
-  /* .validation-list a::before {
-    background: linear-gradient(to bottom, #a0abdb 0%,#2989d8 7%,#207cca 53%,#7d97e8 100%);
-  }
-  .validation-list a::after {
-    content: "";
-    background-image: url(../css/images/validation_icon.png);
-    background-repeat: no-repeat;
-    background-position: 10px 5px;
-  } */
 
   /* 웹 관련 용어 */
   .term {
@@ -383,8 +340,6 @@ header {
   .term-heading {
     margin-top: 0;
     margin-bottom: 0;
-    /* margin: 0;
-    필요한 부분만 0을 주는 게 성능이 좋을 수 있다. 갑론을박 있음. */
     font-size: 1.6rem;
     font-weight: 700;
   }
@@ -419,10 +374,8 @@ header {
   /* 검색폼 */
   .search-form {
     background: #ccc linear-gradient(#ccc, #eee);
-    /* 앞에 ccc는 콜백. 리니어 그라디언트가 안 되는 브라우저면 단색으로라도 나오라고. */
     border: 1px solid #aaa;
     border-bottom-color: #fff;
-    /* 굵기를 없애는 게 아니라 색을 투명하게. */
     border-radius: 15px 15px 0 0;
     padding: 15px 25px 10px;
   }
@@ -438,14 +391,11 @@ header {
     justify-content: space-between;
   }
   .search-form [name="search"] {
-    /* 유니크한 이름으로 name 속성을 많이 쓴다. */
     border: 1px solid #aaa;
     border-radius: 3px;
     padding: 1px 1px 1px .5em;
     height: 22px;
-    /* flex-grow: 1; */
     width: 190px;
-    /* margin: 0 5px; */
   }
   .btn-search {
     background-color: #333;
@@ -456,24 +406,81 @@ header {
     padding: 0 10px;
   }
 
-  /* .search-form {
+  /* 공지사항 및 자료실 */
+  .board {
+    background-color: yellow;
+    position: relative;
+    height: 200px;
+    margin-top: 20px;
+  }
+  .notice-list,
+  .pds-list,
+  .notice-more,
+  .pds-more {
+    display: none;
+  }
+  .is-active .notice-list,
+  .is-active .pds-list,
+  .is-active .notice-more,
+  .is-active .pds-more {
+    display: block;
+  }
+  /* .is-active 로 구분해서 논과 블럭만 설정하고 css */
+  .tab {
+    float: left;
+    margin: 0;
+  }
+  .tab a {
+    display: block;
+    border-radius: 5px 5px 0 0;
     border: 1px solid #aaa;
-    border-bottom: none;
-    border-radius: 10px 10px 0 0;
-    background: linear-gradient(to bottom, #ccc, #eee);
-    padding: 15px 15px 5px 15px;
+    background: #ccc linear-gradient(#ccc, #eee);
+    color: #999;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 5px 10px;
   }
-  .search-form fieldset {
-    border: none;
+  .is-active .tab a {
+    color: #ed702d;
+    border-color: #ed702d #ed702d #fff #ed702d;
+    background: #fff;
+  }
+  .notice-list,
+  .pds-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    background-color: skyblue;
+    position: absolute;
+    left: 0;
+    top: 45px;
+  }
+  .notice-list li,
+  .pds-list li {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-flow: row nowrap;
+    margin-bottom: 10px;
   }
-  .search-form fieldset input {
-    width: 180px;
+  .notice-list a,
+  .pds-list a {
+    /* flex-grow: 1; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 280px;
   }
-  ->내가 한 거 */
+  .notice-more,
+  .pds-more {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: pink;
+    padding: 8px;
+  }
+  .notice-more::before,
+  .pds-more::before {
+    color: hsla(110, 50%, 30%, 1);
+  }
 
 
 .slogan {
