@@ -13,6 +13,11 @@
   clip: rect(0 0 0 0);
   clip: rect(0,0,0,0);
 }
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 
 body *,
 body *::before,
@@ -491,6 +496,80 @@ header {
   .notice-more::before,
   .pds-more::before {
     color: hsla(110, 50%, 30%, 1);
+  }
+  /* .news */
+  /* position, inline-block, float, flex, 다 가능. gird로 실습. 나머지 다 해볼 것 (나는 플롯으로 함)*/
+  .news {
+    margin-top: 20px;
+    position: relative;
+  }  
+  .news::before {
+    content: "";
+    position: absolute;
+    top: 35px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc linear-gradient(to right, #ccc, #fff);
+  }
+  .news-heading {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #ed702d;
+    margin: 0;
+  }
+  .news-article {
+    margin-top: 35px;
+  }
+  .news-article-link {
+    display: grid;
+    /* a태그라 원래 block 줘야 하는데 그리드 됐으니까 안줌 */
+    /* grid-template-columns: 130px 1fr;
+    grid-template-rows: auto; */
+    grid-template-areas:
+    "thumbnail subject"
+    "thumbnail date"
+    "thumbnail brief";
+  }
+  .news-article-subject {
+    margin: 0 0 5px;
+    grid-area: subject;
+    font-size: 1.5rem;
+  }
+  .news-article-date {
+    grid-area: date;
+  }
+  .news-article-brief {
+    margin: 10px 0;
+    grid-area: brief;
+    line-height: 1.5;
+  }
+  figure {
+    margin: 0;
+    margin-right: 10px;
+    grid-area: thumbnail;
+    text-align: center;
+  }
+  figure img {
+    box-shadow: 0 15px 10px 0 #aaax;
+  }
+  figure figcaption {
+    margin-top: 15px;
+  }
+  /* .news-article-thumbnail {
+    background-color: tomato;
+    margin: 0;
+    grid-area: thumbnail;
+  } */
+  .news-more {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    padding: 8px;
+  }
+  .news-more::before {
+    color: hsla(110, 50%, 30%, 1);
+
   }
 
 

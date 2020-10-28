@@ -263,7 +263,25 @@
         </section>
       </div>
       <section class="news">
-        <h2>새소식</h2>
+        <h2 class="news-heading" id="newsHeading">새소식</h2>
+        <article class="news-article">
+          <a href="#" class="news-article-link">
+            <h3 class="news-article-subject">W3C 사이트가 리뉴얼 되었습니다.</h3>
+            <!-- 아티클 안에 독립된 영역 안에서 h1로 다시 시작할 수 있다.
+            기계는 h3으로 읽음
+            -> seo 에서는 h1이 점수가 젤 높은데 이게 왜 이래 싶음.  -> h3으로 하셈</div> -->
+            <time datetime="2020-10-28T14:19:07" class="news-article-date">2020.10.28.</time>
+            <p class="news-article-brief">
+            디자인 및 다양한 view 환경을 고려하여 구성되어 있으며, 기존보다 최신 정보 및 개발자를 위한 기술 가이드도 찾기 쉽도록 구성되어 있습니다.
+            </p>
+            <figure>
+              <img src="./images/news.gif" class="news-article-thumbnail" alt="" aria-labelledby="newsArticleThumbnail">
+              <figcaption id="newsArticleThumbnail">W3C 리뉴얼</figcaption>
+              <!-- alt 내용이 figcaption과 같으므로, id, aria-labelledby -->
+            </figure>
+          </a>
+        </article>
+        <a href="#" class="news-more icon-plus" aria-labelledby="newsHeading" title="새소식">더보기</a>
       </section>
     </div>
     <div class="group group3">group3</div>
