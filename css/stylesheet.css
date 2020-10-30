@@ -33,7 +33,7 @@ body {
   font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
   font-size: 1.5rem;
   color: #181818;
-  background: #ccc;
+  background: #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
 }
 /* 링크 스타일 */
 a{
@@ -219,6 +219,7 @@ header {
   overflow: hidden;
   min-height: 450px;
   padding: 30px 15px;
+  border-radius: 15px 15px 0 0;
 }
   .group {
     margin: 0 15px;
@@ -743,12 +744,64 @@ header {
 
 
 .slogan {
-  background: orange;
-  height: 250px;
+  position: relative;
+  padding: 0 70px 15px 180px;
+}
+.slogan-heading {
+  width: 110px;
+  height: 83px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 83px;
+  position: absolute;
+  left: 35px;
+  bottom: -35px;
+}
+.slogan-heading::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url(./images/coffee.png) no-repeat 0 0;
+}
+.slogan-brief {
+  margin: 0;
+  color: #a09784;
+}
+.slogan-brief q::before {
+  font-size: 3.5rem;
+  position: relative;
+  top: 10px;
+}
+.slogan-brief q::after{
+  content: "";
 }
 
+
+/* .slogan-heading {
+  background-color: lightgreen;
+  width: 110px;
+  height: 83px;
+  background: url(./images/coffee.png);
+  padding-top: 84px;
+  overflow: hidden;
+  float: left;
+}
+.slogan-brief {
+  background-color: yellow;
+  padding: 0 150px;
+  line-height: 2;
+  margin: 0;
+}
+.slogan-brief::before {
+  font-size: 5rem;
+} */
+
 .footer {
-  background: pink;
+  background: #ccc linear-gradient(#ccc 0%, #eee 35%, #fff 60%, #fff 100%);
   height: 240px;
   width: 100%;
 }
